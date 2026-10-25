@@ -12,12 +12,12 @@ The script takes a recorded binary (.bin) file as input and processes the record
 # How to Use:
 1. Open *velocity_extraction.m* in MATLAB.
 2. Update the file path in the script to point to the binary file you want to process. Example datasets are available in the *Recorded datasets* folder.
-3. Enter the video-derived reference speed in the script, in m/s. This value is used to calculate the performance metrics.
+3. Enter the video-derived reference speed in the script, in m/s, line 41. This value is used to calculate the performance metrics.
 4. Run the MATLAB script.
 
 # Optional Parameter Adjustments
-**Spectrogram magnitude scale:** Adjust *clims()* on lines 182 and 217 to change the magnitude scale displayed in the spectrogram plots.
-**Maximum expected speed:** Adjust the maximum speed parameter on line 267 to change the upper speed limit used during speed extraction. This can help reject noise and unexpected detections outside the expected speed range.
+**Spectrogram magnitude scale:** Adjust *clims()* on lines 210 and 248 to change the magnitude scale displayed in the spectrogram plots.
+**Maximum expected speed:** Adjust the maximum speed parameter on line 271 to change the upper speed limit used during speed extraction. This can help reject noise and unexpected detections outside the expected speed range.
 
 # Outputs:
 The MATLAB script produces the following outputs:
