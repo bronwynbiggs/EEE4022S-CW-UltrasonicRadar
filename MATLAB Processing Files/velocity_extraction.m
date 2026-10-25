@@ -297,20 +297,19 @@ meanFilterLength = 5; % Choose the number of neighbouring samples used to smooth
 estimatedTrolleyVelocity_ms = movmean(filteredTrolleyVelocity_ms, meanFilterLength, 'omitnan'); % Smooth the filtered velocity estimates while ignoring missing detections. 
 
 %% STEP 7: Overlay the extracted velocity on the measured spectrogram -- FIGURE 9
-figure; % Open a new figure for the velocity spectrogram and extracted trolley trajectory. 
-imagesc(T_OfInterest, SpeedVectorOfInterest_ms, 20*log10(S_OfInterestToPlot_ms + eps), clims); % Display the measured velocity spectrogram using the existing dB colour limits. 
-axis xy; % Place negative velocity at the bottom and positive velocity at the top of the plot. 
-hold on; % Keep the spectrogram visible so that the extracted velocity can be overlaid. 
-plot(T_OfInterest, estimatedTrolleyVelocity_ms, 'w', 'LineWidth', 2); % Plot the extracted trolley radial velocity as a white line over the spectrogram. 
-xlabel('Time (s)'); % Label the horizontal axis in seconds. 
-ylabel('Velocity (m/s)'); % Label the vertical axis in metres per second. 
+figure; % New figure for velocity spectrogram and extracted trolley trajectory
+imagesc(T_OfInterest, SpeedVectorOfInterest_ms, 20*log10(S_OfInterestToPlot_ms + eps), clims); % Use existing dB colour limits.
+axis xy; % Negative velocity at the bottom and positive at the top 
+hold on; % Keep spectrogram visible so that extracted velocity can be overlaid 
+plot(T_OfInterest, estimatedTrolleyVelocity_ms, 'w', 'LineWidth', 2); % Plot the extracted trolley radial velocity as a white line 
+xlabel('Time (s)'); 
+ylabel('Velocity (m/s)'); 
 
 
-title(sprintf('Extracted Radial Velocity \n (Speedometer Velocity \\approx 5km/h)'), 'FontSize', 26'); % Give the verification figure a descriptive title. 
-grid on; % Add a grid to assist with reading time and velocity values. 
-colormap('jet'); % Use the same colour map as the existing spectrogram plots. 
-colorbar; % Display the relative spectrogram magnitude scale. 
-
+title(sprintf('Extracted Radial Velocity \n (Speedometer Velocity \\approx 5km/h)'), 'FontSize', 26'); 
+grid on; 
+colormap('jet'); 
+colorbar; 
 set(gca, 'FontSize', 26, 'TickDir', 'out', 'TickLength', [0.015 0.015]);
 xticks(0:1:5);
 yticks(-5:1:5);
