@@ -325,7 +325,7 @@ ylim([-5 5]);
 
 approachingVelocity_ms = estimatedTrolleyVelocity_ms(estimatedTrolleyVelocity_ms > minimumMotionSpeed_ms); % Select valid positive radial velocities while the trolley is approaching
 
-edianApproachingVelocity_ms = median(approachingVelocity_ms, 'omitnan'); % The middle speed
+medianApproachingVelocity_ms = median(approachingVelocity_ms, 'omitnan'); % The middle speed
 maximumApproachingVelocity_ms = max(approachingVelocity_ms, [], 'omitnan'); % The highest speed reached
 
 % Print the summary results
