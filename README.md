@@ -16,13 +16,13 @@ The script takes a recorded binary (.bin) file as input and processes the record
 4. Run the MATLAB script.
 
 # Optional Parameter Adjustments
-Spectrogram magnitude scale: Adjust *clims()* on lines 182 and 217 to change the magnitude scale displayed in the spectrogram plots.
-Maximum expected speed: Adjust the maximum speed parameter on line 267 to change the upper speed limit used during speed extraction. This can help reject noise and unexpected detections outside the expected speed range.
+**Spectrogram magnitude scale:** Adjust *clims()* on lines 182 and 217 to change the magnitude scale displayed in the spectrogram plots.
+**Maximum expected speed:** Adjust the maximum speed parameter on line 267 to change the upper speed limit used during speed extraction. This can help reject noise and unexpected detections outside the expected speed range.
 
 # Outputs:
 The MATLAB script produces the following outputs:
-- Speed estimates: An array named *estimatedTrolleyVelocity_ms*, containing the extracted speed estimates in m/s.
-- Spectrograms: Figures showing the received signal's frequency content over time, with frequency and speed axes and estimated velocity trajectories overlaid.
-- Speed statistics: The estimated mean and maximum speeds, printed in the MATLAB Command Window.
-- Performance metrics: Results calculated by comparing the estimated speeds with the video-derived reference speed, printed in the MATLAB Command Window.
+- **Speed estimates:** An array named *estimatedTrolleyVelocity_ms*, containing the extracted speed estimates in m/s.
+- **Spectrograms:** Figures showing the received signal's frequency content over time, with frequency and speed axes and estimated velocity trajectories overlaid.
+- **Speed statistics:** The estimated mean and maximum speeds, printed in the MATLAB Command Window.
+- **Performance metrics:** Results calculated by comparing the estimated speeds with the video-derived reference speed, printed in the MATLAB Command Window.
 
